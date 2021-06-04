@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url();
+	background-color: #FFCC33;
+}
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+.style2 {font-family: Arial, Helvetica, sans-serif}
+.style3 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<div id="Layer1" style="position:absolute; left:507px; top:14px; width:277px; height:43px; z-index:1">
+  <b>
+
+<script>
+
+/*
+RAINBOW TEXT Script by Matt Hedgecoe (c) 2002
+Featured on JavaScript Kit
+For this script, visit http://www.javascriptkit.com
+*/
+
+// ********** MAKE YOUR CHANGES HERE
+
+var text="MUSICA" // YOUR TEXT
+var speed=80 // SPEED OF FADE
+
+// ********** LEAVE THE NEXT BIT ALONE!
+
+
+if (document.all||document.getElementById){
+document.write('<span id="highlight">' + text + '</span>')
+var storetext=document.getElementById? document.getElementById("highlight") : document.all.highlight
+}
+else
+document.write(text)
+var hex=new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0")
+var r=1
+var g=1
+var b=1
+var seq=1
+function changetext(){
+rainbow="#"+hex[r]+hex[g]+hex[b]
+storetext.style.color=rainbow
+}
+function change(){
+if (seq==6){
+b--
+if (b==0)
+seq=1
+}
+if (seq==5){
+r++
+if (r==12)
+seq=6
+}
+if (seq==4){
+g--
+if (g==0)
+seq=5
+}
+if (seq==3){
+b++
+if (b==12)
+seq=4
+}
+if (seq==2){
+r--
+if (r==0)
+seq=3
+}
+if (seq==1){
+g++
+if (g==12)
+seq=2
+}
+changetext()
+}
+function starteffect(){
+if (document.all||document.getElementById)
+flash=setInterval("change()",speed)
+}
+starteffect()
+</script>
+</b>
+</div>
+<div id="Layer2" style="position:absolute; left:41px; top:65px; width:191px; height:178px; z-index:2"><img src="espaciosideral.jpg" width="192" height="179"></div>
+<div id="Layer3" style="position:absolute; left:276px; top:63px; width:191px; height:176px; z-index:3"><img src="220px-Darte_un_beso.jpg" width="192" height="176"></div>
+<div id="Layer4" style="position:absolute; left:521px; top:64px; width:168px; height:172px; z-index:4"><img src="adele.jpg" width="191" height="172"></div>
+<div id="Layer5" style="position:absolute; left:749px; top:66px; width:211px; height:155px; z-index:5"><img src="paty.jpg" width="210" height="157"></div>
+<div id="Layer6" style="position:absolute; left:999px; top:68px; width:209px; height:146px; z-index:6"><img src="Already%20Missing%20You.jpg" width="221" height="167"></div>
+<div id="Layer7" style="position:absolute; left:50px; top:256px; width:185px; height:49px; z-index:7">
+  <p align="center" class="style2"><strong>Jesse Joy Espacio Sideral </strong></p>
+  <p align="center" class="style2"><strong><a href="Jesse.htm">Escuchar</a></strong></p>
+</div>
+<div id="Layer8" style="position:absolute; left:284px; top:254px; width:179px; height:79px; z-index:8">
+  <div align="center" class="style2">
+    <p><strong>Prince Royce - Darte un Beso</strong></p>
+    <p><strong><a href="royce.html">Escuchar</a></strong></p>
+  </div>
+</div>
+<div id="Layer9" class="style3" style="position:absolute; left:523px; top:255px; width:181px; height:47px; z-index:9">
+  <div align="center">
+    <p>Adele - Someone Like You </p>
+    <p><a href="Adele%20-%20Someone%20Like%20You%20-%20YouTube.mp3">Escuchar</a></p>
+  </div>
+</div>
+<div id="Layer10" style="position:absolute; left:756px; top:258px; width:213px; height:74px; z-index:10">
+  <div align="center" class="style2">
+    <p><strong>Paty Cantu - Suerte </strong></p>
+    <p><strong><a href="Paty%20Cant&#65533;%20%20%20Suerte%20(Letra).mp3">Escuchar</a></strong></p>
+  </div>
+</div>
+<div id="Layer11" style="position:absolute; left:1006px; top:262px; width:216px; height:66px; z-index:11">
+  <p align="center" class="style2"><strong>Already Missing You </strong></p>
+  <p align="center" class="style2"><strong><a href="Already%20Missing%20You%20(audio).mp3">Escuchar</a></strong></p>
+</div>
+</body>
+</html>

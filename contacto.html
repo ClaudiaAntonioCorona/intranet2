@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Formulario de correo</title>
+<script language="JavaScript">
+
+<!-- This script and many more are available online from -->
+<!-- Data~Creek Design!! http://datacreek.com/design -->
+
+<!-- Begin
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;             
+if (dc.length > 0) {              
+begin = dc.indexOf(cname);       
+if (begin != -1) {           
+begin += cname.length;       
+end = dc.indexOf(";", begin);
+if (end == -1) end = dc.length;
+return unescape(dc.substring(begin, end));
+   } 
+}
+return null;
+}
+function setCookie(name, value, expires) {
+document.cookie = name + "=" + escape(value) + 
+((expires != null) ? "; expires=" + expires.toGMTString() : "")
++ "; path=/";
+}
+function setName() {
+var expdate = new Date ();
+expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 365));
+var prompt=i = document.Mail.name.value;
+setCookie("name", i, expdate);
+}
+function getName() {
+if(getCookie("name") != null) {
+document.Mail.Name.value = getCookie("emailname");
+   }
+}
+function getInfo() {
+var now= new Date();
+document.Mail.Info.value = "Navegador: " + navigator.userAgent;
+document.Mail.Info.value += "Fecha:" + now;
+}
+function checkMultiple() {
+if (getCookie("emailsent") == 'true') return true;
+else return false;
+}
+function process() {
+setCookie("emailsent", "true");
+with (document.Mail) {
+if (Subject.selectedIndex == 1) action = "mailto:claudia98ac@gmail.com?subject=Comentario";
+else if (Subject.selectedIndex == 2) action = "mailto:claudia98ac@gmail.com?subject=Pregunta";
+else if (Subject.selectedIndex == 3) action = "mailto:claudia98ac@gmail.com?subject=Sugerencia";
+else if (Subject.selectedIndex == 4) action = "mailto:claudia98ac@gmail.com?subject=Enlace roto";
+else action = "mailto:claudia98ac@gmail.com?subject=Otros";
+   }
+}
+function formCheck() {
+var passed = false;
+with (document.Mail) {
+if (Subject.selectedIndex == 0) { 
+alert("Por favor selecciona asunto.");
+Subject.focus();
+}
+else if (Name.value == "") {
+alert("Por favor incluye tu nombre.");
+Name.focus();
+}
+else if (checkMultiple == "") {
+if (confirm("Acabas de mandar un email utilizando este formulario, ¿estás seguro de que quieres mandar otro?")) {
+process();
+passed = true;
+   }
+}
+else {
+process();
+passed = true;
+   }
+}
+return passed;
+}
+// End -->
+</script>
+<link href="Mail%20&%20suggestions_archivos/design2.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<style type="text/css">
+<!--
+body {
+	background-color: #0000CC;
+}
+.style2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+.style3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.style4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.style5 {color: #FFFFFF}
+.style8 {color: #FFFFFF; font-weight: bold; }
+-->
+</style></head>
+
+<body>
+<div id="Layer1" style="position:absolute; left:58px; top:81px; width:96px; height:80px; z-index:1"><img src="correo.png" width="96" height="78"></div>
+
+<div id="Layer2" class="style3" style="position:absolute; left:168px; top:90px; width:324px; height:82px; z-index:2">
+  <p><strong>Claudia Antonio Corona </strong></p>
+  <p><strong>claudia.antonio@ucad.edu.mx</strong></p>
+</div>
+
+<div id="Layer3" style="position:absolute; left:55px; top:192px; width:95px; height:75px; z-index:3"><img src="wats%7B.png" width="93" height="69"></div>
+<div id="Layer4" class="style2" style="position:absolute; left:172px; top:185px; width:306px; height:59px; z-index:4">+52 55 46 98 12 16 </div>
+<div id="Layer5" class="style4" style="position:absolute; left:62px; top:24px; width:168px; height:39px; z-index:5">Contacto</div>
+<div id="Layer6" style="position:absolute; left:544px; top:28px; width:532px; height:395px; z-index:6">
+</p>
+<center>
+  <strong><font face="Times" size="3">
+    </strong>
+  <dd><span class="style8">Formulario de correo<br>
+Gracias por visitar este sitio envia tus comentarios, preguntas etc.</span> <br>
+
+<font face="Times" size="2">
+<form action="mailto:claudia98ac@gmail.com?subject=TJS - Form" encType="text/plain" method="post" name="Mail" onsubmit="return formCheck();">
+
+  <input name="Info" size="0" type="hidden">
+  <input name="Javascript Picksubject Form" size="0" type="hidden">
+  <table border="0" cellPadding="5" cellSpacing="0">
+    <tr>
+      <td><span class="style5">Name</span>: 
+        <input name="Name" onchange="setName()" size="20"> </td>
+      <td align="right"><span class="style5">Asunto:</span>        <select name="Subject">
+      <option selected SELECT>Selecciona asunto...</option>
+      <option>1. Comentario</option>
+      <option>2. Pregunta</option>
+      <option>3. Sugerencia</option>
+      <option>4. Enlaces rotos</option>
+      <option>5. Ninguno de los anteriores</option>
+      </select> </td>
+    </tr>
+    <tr>
+      <td colSpan="2"><span class="style5">Notas:</span><br>
+      <textarea cols="65" name="Comments, Suggestions" rows="6"></textarea> </td>
+    </tr>
+  </table>
+  <center>
+  <table>
+    <tr>
+      <td align="middle"><input type="submit" value="Enviar"> </td>
+    </tr>
+  </table>
+  </center>
+</form>
+<script language="JavaScript">
+<!-- Begin
+getInfo();
+getName();
+// End -->
+</script>
+</font></dd>
+</center>
+<!-- Script Size:  4.15 KB  --><center>
+<form>
+  <p>
+  <input name="lukk" onclick="window.close();" type="button" value="Cerrar ventana"></p>
+</form>
+</center>
+<p><br>
+</p>
+</dd>
+</center>
+</div>
+
+
+</body>
+</html>

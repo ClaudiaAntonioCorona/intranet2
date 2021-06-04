@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script language="JavaScript1.2">
+// *******************************************************************
+// script by drevil_nz, Michael Dillon, Christchurch New Zealand. 
+// Permission granted to use this script provided this credit        
+// remains intact. Visit my homepage www.chc.quik.co.nz/juggler/mikey.html
+// Script written for Internet Explorer 4.0+.
+// ******************************************************************* 
+
+var message="Michael Dillon's dynamic title script"     //specifys the title
+var message=message+"          " //gives a pause at the end,1 space=1 speed unit, here I used 10 spaces@150 each = 1.5seconds. 
+i="0"			         //declares the variable and sets it to start at 0
+var temptitle=""                 //declares the variable and sets it to have no value yet.
+var speed="150"                  //the delay in milliseconds between letters
+
+function titler(){
+if (!document.all&&!document.getElementById)
+return
+document.title=temptitle+message.charAt(i)  //sets the initial title
+temptitle=temptitle+message.charAt(i)       //increases the title by one letter
+i++					    //increments the counter
+if(i==message.length)			    //determines the end of the message
+{
+i="0"					    //resets the counter at the end of the message
+temptitle=""				    //resets the title to a blank value
+}
+setTimeout("titler()",speed) 		   //Restarts. Remove line for no-repeat.
+}
+
+window.onload=titler
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="css3clock.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #00CCFF;
+}
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+.style2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+.style8 {	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+-->
+</style></head>
+
+<body>
+<div id="Layer1" class="style1" style="position:absolute; width:848px; height:89px; z-index:1; left: 244px; top: 12px;">
+  <div align="center">
+ <h2>
+<script language="JavaScript1.2">
+
+/*
+Neon Lights Text
+By JavaScript Kit (http://javascriptkit.com)
+Over 400+ free scripts here!
+*/
+
+var message="Intranet Ingenieria en Sistemas Computacionales"
+var neonbasecolor="gray"
+var neontextcolor="black"
+var flashspeed=100  //in milliseconds
+
+///No need to edit below this line/////
+
+var n=0
+if (document.all||document.getElementById){
+document.write('')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+function neon(){
+
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+//eval("document.all.neonlight"+m).style.color=neonbasecolor
+crossref(m).style.color=neonbasecolor
+}
+
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",1500)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+
+</script>
+</h2>
+
+<p align="center"><br />
+
+  </div>
+</div>
+<div id="Layer2" style="position:absolute; left:46px; top:13px; width:165px; height:61px; z-index:2"><img src="UCADD.png" width="168" height="81"></div>
+
+<div id="Layer4" style="position:absolute; left:1097px; top:3px; width:13566109px; height:83px; z-index:4">
+<table border="0" width="200" cellspacing="0" cellpadding="3">
+<form name="where">
+  <tr>
+    <td width="100%">
+<select name="city" size="1" onchange="updateclock(this);"> 
+<option value="" selected>Local time</option>
+<option value="0">London GMT</option> 
+<option value="1">Rome</option>
+<option value="7">Bangkok</option>
+<option value="8">Hong Kong</option>
+<option value="9">Tokyo</option> 
+<option value="10">Sydney</option>
+<option value="12">Fiji</option>
+<option value="-10">Hawaii</option>
+<option value="-8">San Francisco</option> 
+<option value="-5">New York</option>
+<option value="-3">Buenos Aires</option>
+</select>
+
+</td>
+  </tr>
+  <tr>
+    <td width="100%">
+<script language="JavaScript">
+
+/*
+Drop Down World Clock- By JavaScript Kit (http://www.javascriptkit.com)
+Portions of code by Kurt @ http://www.btinternet.com/~kurt.grigg/javascript
+This credit notice must stay intact
+*/
+
+if (document.all||document.getElementById)
+document.write('<span id="worldclock" style="font:bold 16px Arial;"></span><br />')
+
+zone=0;
+isitlocal=true;
+ampm='';
+
+function updateclock(z){
+zone=z.options[z.selectedIndex].value;
+isitlocal=(z.options[0].selected)?true:false;
+}
+
+function WorldClock(){
+now=new Date();
+ofst=now.getTimezoneOffset()/60;
+secs=now.getSeconds();
+sec=-1.57+Math.PI*secs/30;
+mins=now.getMinutes();
+min=-1.57+Math.PI*mins/30;
+hr=(isitlocal)?now.getHours():(now.getHours() + parseInt(ofst)) + parseInt(zone);
+hrs=-1.575+Math.PI*hr/6+Math.PI*parseInt(now.getMinutes())/360;
+if (hr < 0) hr+=24;
+if (hr > 23) hr-=24;
+ampm = (hr > 11)?"PM":"AM";
+statusampm = ampm.toLowerCase();
+
+hr2 = hr;
+if (hr2 == 0) hr2=12;
+(hr2 < 13)?hr2:hr2 %= 12;
+if (hr2<10) hr2="0"+hr2
+
+var finaltime=hr2+':'+((mins < 10)?"0"+mins:mins)+':'+((secs < 10)?"0"+secs:secs)+' '+statusampm;
+
+if (document.all)
+worldclock.innerHTML=finaltime
+else if (document.getElementById)
+document.getElementById("worldclock").innerHTML=finaltime
+else if (document.layers){
+document.worldclockns.document.worldclockns2.document.write(finaltime)
+document.worldclockns.document.worldclockns2.document.close()
+}
+
+
+setTimeout('WorldClock()',1000);
+}
+
+window.onload=WorldClock
+//-->
+</script>
+
+<!--Place holder for NS4 only-->
+<ilayer id="worldclockns" width=100% height=35><layer id="worldclockns2" width=100% height=35 left=0 top=0 style="font:bold 16px Arial;"></layer></ilayer>
+
+
+</td>
+</form>
+  </tr>
+</table>
+</div>
+<div id="Layer5" style="position:absolute; left:1103px; top:87px; width:209px; height:29px; z-index:5">
+<script>
+
+/*Current date script credit: 
+JavaScript Kit (www.javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()+1
+if (month<10)
+month="0"+month
+var daym=mydate.getDate()
+if (daym<10)
+daym="0"+daym
+
+
+document.write("<small><font color='000000' face='Arial'><b>"+daym+"/"+month+"/"+year+"</b></font></small>")
+
+</script>
+</div>
+</body>
+</html>
